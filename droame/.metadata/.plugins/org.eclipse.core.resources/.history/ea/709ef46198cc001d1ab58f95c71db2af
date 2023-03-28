@@ -1,0 +1,109 @@
+package org.droame.autonomous.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "customer")
+
+public class Customer {
+	 private long id;
+	    private String Name;
+	    private String EmailId;
+	    private String PhoneNumber;
+	    private String Address;
+	    private String City;
+	    private String State;
+	    private String Pincode;
+
+	    public Customer() {
+	    	
+	    }
+	    public Customer(String Name, String EmailId, String PhoneNumber, String Address, String City, String State, String Pincode) {
+	    	this.Name = Name;
+	    	this.EmailId = EmailId;
+	    	this.PhoneNumber = PhoneNumber;
+	    	this.Address = Address;
+	    	this.City = City;
+	    	this.State = State;
+	    	this.Pincode = Pincode;
+	       }
+	    
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+		public long getId() {
+			return id;
+		}
+		public void setId(long id) {
+			this.id = id;
+		}
+		
+	    @Column(name = "name", nullable = false)
+		public String getName() {
+			return Name;
+		}
+		public void setName(String name) {
+			Name = name;
+		}
+		
+	    @Column(name = "email_id", nullable = false)
+		public String getEmailId() {
+			return EmailId;
+		}
+		public void setEmailId(String emailId) {
+			EmailId = emailId;
+		}
+		
+	    @Column(name = "phone_number", nullable = false)
+		public String getPhoneNumber() {
+			return PhoneNumber;
+		}
+		public void setPhoneNumber(String phoneNumber) {
+			PhoneNumber = phoneNumber;
+		}
+		
+	    @Column(name = "address", nullable = false)
+		public String getAddress() {
+			return Address;
+		}
+		public void setAddress(String address) {
+			Address = address;
+		}
+		
+	    @Column(name = "city", nullable = false)
+		public String getCity() {
+			return City;
+		}
+		public void setCity(String city) {
+			City = city;
+		}
+		
+	    @Column(name = "state", nullable = false)
+		public String getState() {
+			return State;
+		}
+		public void setState(String state) {
+			State = state;
+		}
+		
+	    @Column(name = "pincode", nullable = false)
+		public String getPincode() {
+			return Pincode;
+		}
+		public void setPincode(String pincode) {
+			Pincode = pincode;
+		}
+		
+		@Override
+		public String toString() {
+			return "Customer [id=" + id + ", Name=" + Name + ", EmailId=" + EmailId + ", PhoneNumber=" + PhoneNumber
+					+ ", Address=" + Address + ", City=" + City + ", State=" + State + ", Pincode=" + Pincode + "]";
+		}
+	    
+	  
+	    
+}

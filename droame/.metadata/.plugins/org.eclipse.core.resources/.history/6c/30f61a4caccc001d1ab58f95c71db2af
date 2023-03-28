@@ -1,0 +1,78 @@
+package org.droame.autonomous.model;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "booking")
+
+public class Booking {
+	 private long bookingId;
+	    private String createdTime;
+	    private String droneShotName;
+	    private String customerId;
+	    
+
+	    public Booking() {
+	    	
+	    }
+	    public Booking(String bookingId, String createdTime, String droneShotName, String customerId) {
+	    	this.createdTime = createdTime;
+	    	this.droneShotName = droneShotName;
+	    	this.customerId = customerId;
+	    	
+	       }
+	    
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    
+		public long getBookingId() {
+			return bookingId;
+		}
+		public void setBookingId(long bookingId) {
+			this.bookingId = bookingId;
+		}
+		
+		
+		
+		@Column(name = "created_time", nullable = false)
+		private java.sql.Date created_time;
+		  
+		public String getCreatedTime() {
+			return createdTime;
+		}
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+		
+	    @Column(name = "drone_shot_name", nullable = false)
+		public String getDroneShotName() {
+			return droneShotName;
+		}
+		public void setDroneShotName(String droneShotName) {
+			this.droneShotName = droneShotName;
+		}
+		
+	    @Column(name = "customer_id", nullable = false)
+		public String getCustomerId() {
+			return customerId;
+		}
+		public void setCustomerId(String customerId) {
+			this.customerId = customerId;
+		}
+		@Override
+		public String toString() {
+			return "Booking [bookingId=" + bookingId + ", createdTime=" + createdTime + ", droneShotName="
+					+ droneShotName + ", customerId=" + customerId + "]";
+		}
+		
+		
+	    
+}	    
